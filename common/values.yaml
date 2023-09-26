@@ -1,2 +1,6 @@
+general:
+  namespace: showcase
+
 service:
   port: 80
+  
