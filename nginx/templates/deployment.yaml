@@ -24,4 +24,4 @@ spec:
       volumes:
         - name: config
           configMap:
-            name: "{{ .Chart.Name }}ConfigMap"
+            name: "{{ .Chart.Name }}"
