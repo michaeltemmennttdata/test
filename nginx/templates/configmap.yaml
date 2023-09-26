@@ -1,6 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
-  name: "{{ .Chart.Name }}configmap"
+metadata:
+  name: "{{ .Chart.Name }}"
   namespace: "{{ .Values.general.namespace }}"
 data:
   index.html: |
