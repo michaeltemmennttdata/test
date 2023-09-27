@@ -1,5 +1,5 @@
 general:
-  namespace: showcaseArgoCD
+  namespace: showcaseargocd
 
 service:
   port: 80
