@@ -3,4 +3,3 @@ general:
 
 service:
   port: 80
-  
