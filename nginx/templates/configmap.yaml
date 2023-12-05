@@ -5,4 +5,4 @@ metadata:
   namespace: "{{ .Values.general.namespace }}"
 data:
   index.html: |
-    This is our showcase for argocd with phoenix!
+    This is our showcase!
