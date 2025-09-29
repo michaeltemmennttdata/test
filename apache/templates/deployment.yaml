@@ -1,0 +1,29 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: "{{ .Chart.Name }}"
+  namespace: "{{ .Values.general.namespace }}-{{ .Values.general.stage }}"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "{{ .Chart.Name }}"
+  template:
+    metadata:
+      annotations:
+        checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
+      labels:
+        app: "{{ .Chart.Name }}"
+    spec:
+      containers:
+        - name: "{{ .Chart.Name }}"
+          image: httpd:trixie
+          volumeMounts:
+            - name: config
+              mountPath: /usr/local/apache2/htdocs/index.html
+              subPath: index.html
+      volumes:
+        - name: config
+          configMap:
+            name: "{{ .Chart.Name }}"
