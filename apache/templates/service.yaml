@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: "{{ .Chart.Name }}"
+  namespace: "{{ .Values.general.namespace }}-{{ .Values.general.stage }}"
+  labels:
+    app: "{{ .Chart.Name }}"
+spec:
+  ports:
+    - name: http
+      port: 3128
+      targetPort: {{ .Values.service.port }}
+      protocol: TCP
+      nodePort: 30195
+  selector:
+    app: "{{ .Chart.Name }}"
+  type: NodePort
