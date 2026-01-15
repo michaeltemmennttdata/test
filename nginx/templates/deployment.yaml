@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: "{{ .Chart.Name }}"
-          image: docker.io/nginx:latest
+          image: docker.io/library/nginx:latest
           volumeMounts:
             - name: config
               mountPath: /usr/share/nginx/html/index.html
