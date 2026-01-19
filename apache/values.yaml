@@ -1,0 +1,6 @@
+general:
+  namespace: showcaseargocd
+
+service:
+  port: 80
+  

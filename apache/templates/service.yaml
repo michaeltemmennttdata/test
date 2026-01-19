@@ -11,7 +11,7 @@ spec:
       port: 3128
       targetPort: {{ .Values.service.port }}
       protocol: TCP
-      nodePort: 30190
+      nodePort: 30195
   selector:
     app: "{{ .Chart.Name }}"
   type: NodePort
