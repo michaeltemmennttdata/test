@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: "{{ .Chart.Name }}"
-          image: nginx:stable
+          image: nginx:stable-alpine-slim
           volumeMounts:
             - name: config
               mountPath: /usr/share/nginx/html/index.html
